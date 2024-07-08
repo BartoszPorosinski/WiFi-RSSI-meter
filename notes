@@ -1,0 +1,7 @@
+WiFIManager API: https://developer.android.com/reference/android/net/wifi/WifiManager
+
+Code snippets:
+WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
+WifiInfo info = wifiManager.getConnectionInfo();
+String ssid = info.getSSID();
+int rssi = info.getRssi();
