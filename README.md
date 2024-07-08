@@ -1,3 +1,3 @@
-# WiFI-RSSI-meter
+# WiFI-RSSI-monitor
 
 WiFi RSSI monitor Android app. 
