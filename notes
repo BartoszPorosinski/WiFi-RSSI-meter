@@ -1,7 +1,36 @@
 WiFIManager API: https://developer.android.com/reference/android/net/wifi/WifiManager
 
+https://stackoverflow.com/questions/41583416/getting-wifi-rssi-values-continuously-android-application-doesnt-start
+https://isurunuwanthilaka.medium.com/get-rssi-in-android-fragments-e2cef62948f2
+
 Code snippets:
+
+// #1
 WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
 WifiInfo info = wifiManager.getConnectionInfo();
 String ssid = info.getSSID();
 int rssi = info.getRssi();
+
+
+// #2
+WifiManager wifiManager = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+
+// Level of a Scan Result
+List<ScanResult> wifiList = wifiManager.getScanResults();
+for (ScanResult scanResult : wifiList) {
+  int level = WifiManager.calculateSignalLevel(scanResult.level, 5);
+  System.out.println("Level is " + level + " out of 5");
+}
+
+// Level of current connection
+int rssi = wifiManager.getConnectionInfo().getRssi();
+int level = WifiManager.calculateSignalLevel(rssi, 5);
+System.out.println("Level is " + level + " out of 5");
+
+
+
+// #3
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
