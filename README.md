@@ -1,3 +1,3 @@
-# internet-speed-meter
+# WiFI-RSSI-meter
 
-Internet speed meter Android app. 
+WiFi RSSI monitor Android app. 
